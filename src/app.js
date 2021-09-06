@@ -5,6 +5,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 
 const App = express()
+const port = process.env || 3000
 
 const publicDir = path.join(__dirname, '../public')
 const viewPath =  path.join(__dirname, '../templates/views')
@@ -74,8 +75,8 @@ App.get('*', (req, res)=>{
     })
 })
 
-App.listen(3000, ()=>{
-    console.log('The web sever is running ...')
+App.listen(port, ()=>{
+    console.log('The web sever is running on port '+port)
 })
 
 
